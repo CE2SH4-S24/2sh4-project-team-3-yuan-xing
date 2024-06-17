@@ -15,7 +15,7 @@ Name: [Yuan ding]
 
 MacID: [dingy24]
 
-Student No.: []
+Student No.: [001219483]
 
 Group Member 2 Information:
 
