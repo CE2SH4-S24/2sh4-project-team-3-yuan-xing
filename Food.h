@@ -8,7 +8,7 @@
 #include "GameMechs.h"
 #include "MacUILib.h"
 
-#define FOOD 1
+#define FOOD 5
 
 class Food
 {

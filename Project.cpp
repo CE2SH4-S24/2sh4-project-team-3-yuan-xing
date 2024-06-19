@@ -142,6 +142,11 @@ void DrawScreen(void)
     MacUILib_printf("Score: %d", myGM->getScore());
     MacUILib_printf("\n");
 
+    if(myGM->getSuperFoodFlag() == true)  // if superfoodflag status is true print msg
+    {   
+        MacUILib_printf("\nYay! You ate a superFood! Score+10!\n");
+    }
+
     if(myGM->getLoseFlagStatus() == true)  // if lose status is true print loss msg
     {   
         MacUILib_printf("\nOh no, you ate yourself :<\n");

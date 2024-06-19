@@ -126,10 +126,17 @@ void Player::movePlayer()
     {
         foodBin->getElement(foodElement, i);
         if (currentHead.isPosEqual(&foodElement))
-        {
+        {   
+            if(foodElement.getSymbol() == '@')
+            {
+                mainGameMechsRef->setSuperFoodTrue(); 
+            }
+            else
+            {
+                mainGameMechsRef->setSuperFoodFalse();
+            }
             foodCollide = true;
             playerPosList->insertHead(currentHead); 
-            break;
         }
     }
     
@@ -137,13 +144,20 @@ void Player::movePlayer()
     // otherwise, remove tail and carry on
     if (foodCollide)
     {
-        mainGameMechsRef->incrementScore();
+        if(mainGameMechsRef->getSuperFoodFlag())
+        {
+            mainGameMechsRef->incrementSuperScore();
+            playerPosList->removeTail();
+        }
+        else
+        {
+            mainGameMechsRef->incrementScore();
+        }
         mainFoodRef->generateFood(playerPosList);
     }
+    
     else
-    {
-        // current player position list
-        
+    {        
 
         // self collision check
         for (int j = 1; j < playerPosList->getSize(); j++)
