@@ -9,6 +9,7 @@ GameMechs::GameMechs()
     exitFlag = false;
     boardSizeX = 20;
     boardSizeY = 10;
+    score = 0;
 }
 
 GameMechs::GameMechs(int boardX, int boardY)
@@ -17,6 +18,7 @@ GameMechs::GameMechs(int boardX, int boardY)
     exitFlag = false;
     boardSizeX = boardX;
     boardSizeY = boardY;
+    score = 0;
 
 }
 
@@ -27,6 +29,11 @@ GameMechs::GameMechs(int boardX, int boardY)
 bool GameMechs::getExitFlagStatus()
 {
     return exitFlag;
+}
+
+bool GameMechs::getLoseFlagStatus()
+{
+    return loseFlag;
 }
 
 char GameMechs::getInput()
@@ -52,10 +59,19 @@ int GameMechs::getBoardSizeY()
     return boardSizeY;
 }
 
- 
+int GameMechs::getScore()
+{
+    return score;
+}
+
 void GameMechs::setExitTrue()
 {
     exitFlag = true;
+}
+
+void GameMechs::setLoseFlagTrue()
+{
+    loseFlag = true;
 }
 
 void GameMechs::setInput(char this_input)
@@ -66,6 +82,11 @@ void GameMechs::setInput(char this_input)
 void GameMechs::clearInput()
 {
     input = 0;
+}
+
+void GameMechs::incrementScore()
+{
+    score++;
 }
 
 // Provide definitions of more member functions as required
