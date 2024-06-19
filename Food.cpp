@@ -84,3 +84,4 @@ objPosArrayList *Food::getFoodPos()
 {
     return foodBin;
 }
+
