@@ -141,6 +141,11 @@ void DrawScreen(void)
     }
     MacUILib_printf("Score: %d", myGM->getScore());
     MacUILib_printf("\n");
+
+    if(myGM->getLoseFlagStatus() == true)  // if lose status is true print loss msg
+    {   
+        MacUILib_printf("\nOh no, you ate yourself :<\n");
+    }
     
 }
 
@@ -152,7 +157,7 @@ void LoopDelay(void)
 
 void CleanUp(void)
 {
-    MacUILib_clearScreen();    
+    delete myFood;
     delete myPlayer; 
     delete myGM;
     MacUILib_uninit();
