@@ -1,5 +1,6 @@
 #ifndef FOOD_H
 #define FOOD_H
+
 #include <cstdlib>
 #include <time.h>
 
@@ -8,30 +9,28 @@
 #include "GameMechs.h"
 #include "MacUILib.h"
 
-#define FOOD 1
+#define NUM_FOOD 5
 
-class Food
+class Food 
 {
     private:
-
-        objPosArrayList* foodBin;
+        objPosArrayList* foodBucket;
         GameMechs* mainGameMechsRef;
 
-    public:
-
-        // constructor
+    public://
+        //Constructor
         Food(GameMechs* thisGMRef);
 
-        // deconstructor
+        //Deconstructor
         ~Food();
 
+        //Getter
+        objPosArrayList* getFoodPos();
+        int getSize();
 
         void generateFood(objPosArrayList* blockOff);
-        objPosArrayList* getFoodPos();
-        
-        
+        void add(objPos thisObj);
+        bool isExist(objPos thisObj);
 };
-
-
 
 #endif
