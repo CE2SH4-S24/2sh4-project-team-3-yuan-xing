@@ -13,14 +13,6 @@ Group Member 1 Information:
 
 Name: [Yuan ding]
 
-MacID: [dingy24]
-
-Student No.: [001219483]
-
 Group Member 2 Information:
 
 Name: [Lin, Xing]
-
-MacID: [lin198]
-
-Student No.: [400393204]
